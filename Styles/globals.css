@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+
+  /* Flex -> flex / align / justify */
+  .flex-center-between {
+    @apply flex items-center justify-between  
+  }
+  .flex-center-center {
+    @apply flex items-center justify-center
+  }
+
+
+
+
   .navBtn {
     @apply hidden 
      md:inline-flex;
