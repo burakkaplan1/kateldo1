@@ -14,7 +14,7 @@ function MiddleSearchSection() {
   }
 
   return (
-    <div className="my-8 mx-auto px-2 lg:px-20 flex justify-center  ">
+    <div className="my-8 mx-auto px-2 lg:px-20 flex-center-center ">
       {/* Selector (all, real estate, vehicle) */}
       <div className="w-full max-w-6xl px-8 py-8 sm:px-0 dark:bg-gray-800 bg-blue-50 rounded-lg">
         <Tab.Group>

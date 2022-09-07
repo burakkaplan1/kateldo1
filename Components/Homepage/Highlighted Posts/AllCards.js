@@ -71,7 +71,7 @@ function AllCards() {
           />
         ))}
       </div>
-      <div className="mt-2 flex items-center justify-items-center justify-center space-x-6">
+      <div className="mt-2 flex-center-center justify-items-center space-x-6">
         {currentShow > 3 && (
           <button
             className="px-3 py-2 border-2 dark:text-white text-blue-800 border-blue-300 hover:bg-blue-500 hover:text-white"

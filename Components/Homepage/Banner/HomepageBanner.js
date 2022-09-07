@@ -8,7 +8,7 @@ function HomepageModal() {
   const Router = useRouter();
   return (
     <div className="mx-2 flex space-x-4 z-0 ">
-      <div className=" relative flex justify-center items-center w-full mx-auto">
+      <div className="relative flex-center-center w-full mx-auto">
         <img
           className={`${
             darkMode && "filter grayscale "
@@ -46,7 +46,7 @@ function HomepageModal() {
         </div>
       </div>
 
-      <div className="relative flex justify-center items-center w-full mx-auto">
+      <div className="relative flex-center-between w-full mx-auto">
         <img
           className={`${
             darkMode && "filter grayscale "

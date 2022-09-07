@@ -14,7 +14,7 @@ function RealEstateCard(props) {
       </div>
 
       <div className="p-2">
-        <div className="flex justify-between font-semibold text-lg dark:text-white text-blue-600">
+        <div className="flex-center-between font-semibold text-lg dark:text-white text-blue-600">
           <div>
             <p>
               {props.Brand}, {props.Model}

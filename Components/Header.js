@@ -63,7 +63,7 @@ function Header() {
   return (
     <div className=" dark:bg-gray-900 bg-white h-20 z-[9999] flex items-center w-full mt-0 sticky shadow-sm border-b dark:border-b dark:border-b-gray-800 top-0 px-5">
       <div
-        className="flex items-center justify-between max-w-6xl mx-auto lg:mx-1 cursor-pointer"
+        className="flex-center-between max-w-6xl mx-auto lg:mx-1 cursor-pointer"
         onClick={() => {
           Router.push({
             pathname: "/",

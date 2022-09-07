@@ -2,7 +2,7 @@ import FinderBoxInside from "./FinderBoxInside";
 
 function FinderBoxs() {
   return (
-    <div className="mt-8 mx-auto w-11/12 sm:w-5/6 flex flex-col sm:flex-row items-center justify-between lg:justify-evenly">
+    <div className="mt-8 mx-auto w-11/12 sm:w-5/6 flex-center-between flex-col sm:flex-row lg:justify-evenly">
       <FinderBoxInside
         NederlandsText="Vind een makelaar"
         EnglishText="Find an agent"
