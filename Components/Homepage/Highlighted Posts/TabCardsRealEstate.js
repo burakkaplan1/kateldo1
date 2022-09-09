@@ -1,7 +1,7 @@
 import { collection, onSnapshot, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
-import RealEstateCard from "./RealEstateCard";
+import HomepageCard from "./HomepageCard";
 function TabCardsRealEstate() {
   const [posts, setPosts] = useState([]);
   const [currentShow, setCurrentShow] = useState(3);
@@ -10,12 +10,11 @@ function TabCardsRealEstate() {
       setPosts(snapshot.docs);
     });
   }, [db]);
-  console.log(posts.map((i) => i.data()));
   return (
     <div>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 items-center justify-items-center md:px-1 lg:px-4">
         {posts.slice(0, currentShow).map((post) => (
-          <RealEstateCard
+          <HomepageCard
             key={post.id}
             image={
               post.data().ImageURL

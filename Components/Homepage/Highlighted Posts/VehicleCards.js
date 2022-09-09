@@ -1,13 +1,7 @@
-import {
-  collection,
-  onSnapshot,
-  query,
-  orderBy,
-  data,
-} from "@firebase/firestore";
+import { collection, onSnapshot, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
-import VehicleCard from "./VehicleCard";
+import HomepageCard from "./HomepageCard";
 
 function VehicleCards() {
   const [posts, setPosts] = useState([]);
@@ -17,12 +11,11 @@ function VehicleCards() {
       setPosts(snapshot.docs);
     });
   }, [db]);
-  console.log(posts.map((i) => i.data()));
   return (
     <div>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 items-center justify-items-center md:px-1 lg:px-4 cursor-pointer">
         {posts.slice(0, currentShow).map((post) => (
-          <VehicleCard
+          <HomepageCard
             key={post.id}
             image={
               post.data().ImageURL

@@ -1,11 +1,17 @@
-import { BsTextarea } from "react-icons/Bs";
-import { TbStairsUp, TbResize } from "react-icons/tb";
+import { BsTextarea, BsSpeedometer2 } from "react-icons/Bs";
+import {
+  TbStairsUp,
+  TbResize,
+  TbEngine,
+  TbManualGearbox,
+} from "react-icons/tb";
 import { MdMeetingRoom } from "react-icons/Md";
-import { BiBed } from "react-icons/Bi";
-import { FaCouch } from "react-icons/Fa";
+import { BiBed, BiGasPump } from "react-icons/Bi";
+import { FaCouch, FaHorseHead } from "react-icons/Fa";
+import { GiF1Car, GiPathDistance } from "react-icons/Gi";
 import { useEffect } from "react";
 
-function RealEstateCard(props) {
+function HomepageCard(props) {
   const infoItems = {
     RealEstate: {
       plotArea: [
@@ -51,7 +57,64 @@ function RealEstateCard(props) {
         props.BedroomNumber > 1 ? "Bedrooms" : "Bedroom",
       ],
     },
-    Vehicle: {},
+    Vehicle: {
+      fuelType: [
+        props.FuelType,
+        <BiGasPump className="icon-md" />,
+        props.FuelType,
+      ],
+      gearType: [
+        props.GearType,
+        <TbManualGearbox className="icon-md" />,
+        props.GearType,
+        "Gear",
+      ],
+      EVRange: [
+        props.EVRange,
+        <GiPathDistance className="icon-md" />,
+        props.EVRange,
+        "Km",
+      ],
+      engineSize: [
+        props.EngineSize,
+        <TbEngine className="icon-md" />,
+        Intl.NumberFormat("nl-NL", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(props.EngineSize),
+        "cc",
+      ],
+      horsePower: [
+        props.Horsepower,
+        <FaHorseHead className="icon-md" />,
+        props.Horsepower,
+        "HP",
+      ],
+      torque: [
+        props.Torque,
+        <GiF1Car className="icon-md" />,
+        Intl.NumberFormat("nl-NL", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(props.Torque),
+        "Nm",
+      ],
+      maximumSpeed: [
+        props.MaximumSpeed,
+        <BsSpeedometer2 className="icon-md" />,
+        props.MaximumSpeed,
+        "Km/h",
+      ],
+      color: [
+        props.Color,
+        <div
+          style={{ backgroundColor: props.Color }}
+          className="icon-md "
+        ></div>,
+        props.Color,
+        "Exterior",
+      ],
+    },
   };
 
   return (
@@ -63,19 +126,25 @@ function RealEstateCard(props) {
           src={props.image}
           alt=""
         />
-        <span className="absolute top-4 -right-7 px-7 font-semibold text-white bg-indigo-700 rotate-45 ">
-          {props.RentOrSale}
+        <span className="absolute text-center top-5 -right-8 px-10 font-semibold text-white bg-indigo-700 rotate-45 ">
+          {props.cardType == "RealEstate"
+            ? props.RentOrSale
+            : props.cardType == "Vehicle" && props.VehicleType}
         </span>
 
         <div className="h-0 w-full bottom-[-50%] absolute flex items-center card-info">
-          <div className="grid grid-cols-3 grid-rows-2 p-2 w-full h-full">
-            {Object.values(infoItems.RealEstate)
+          <div className="grid grid-cols-3 items-center p-2 w-full h-full">
+            {Object.values(
+              props.cardType == "RealEstate"
+                ? infoItems.RealEstate
+                : infoItems.Vehicle
+            )
               .filter((i) => i[0])
               .map((values, index) => (
                 <div key={index} className="flex-center-center flex-col">
-                  <span>{values[1]}</span>
+                  <span className="">{values[1]}</span>
                   <p className="font-semibold text-sm">{values[2]}</p>
-                  <p className="text-sm">{values[3]}</p>
+                  <p className="text-xs ">{values[3]}</p>
                 </div>
               ))}
           </div>
@@ -85,7 +154,7 @@ function RealEstateCard(props) {
         <div className="relative overflow-hidden flex-center-between">
           <div>
             <p>
-              {props.Province}, {props.Municipality}
+              {props.firstItem}, {props.secondItem}
             </p>
           </div>
           <p className="dark:text-white text-blue-900 font-bold ">
@@ -100,11 +169,12 @@ function RealEstateCard(props) {
       </div>
       <div className="text-sm mt-0 px-4 pb-2">
         <p>
-          {props.Street}, {props.PostalCode}
+          {props.thirdItem}, {props.fourthItem}
         </p>
       </div>
+      <span className="hidden"> {props.cardType}</span>
     </div>
   );
 }
 
-export default RealEstateCard;
+export default HomepageCard;
