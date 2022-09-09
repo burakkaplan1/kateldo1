@@ -23,8 +23,6 @@ function AllCards() {
     [db]
   );
 
-  console.log(houses);
-  console.log(vehicles);
   return (
     <div>
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 items-center justify-items-center md:px-1 lg:px-4">
@@ -40,12 +38,14 @@ function AllCards() {
             RentOrSale={house.data().RentOrSale}
             Province={house.data().Province}
             Municipality={house.data().Municipality}
-            housealCode={house.data().housealCode}
+            PostalCode={house.data().PostalCode}
             Street={house.data().Street}
             PlotSize={house.data().PlotArea}
+            FloorSize={house.data().FloorArea}
+            numberOfFloor={house.data().NumberOfFloor}
             RoomNumber={house.data().NumberOfRoom}
             BedroomNumber={house.data().NumberOfBedroom}
-            HouseType={house.data().HouseType}
+            LivingroomNumber={house.data().NumberOfLivingRoom}
           />
         ))}
         {vehicles.slice(0, currentShow).map((vehicle) => (

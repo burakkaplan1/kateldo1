@@ -29,9 +29,11 @@ function TabCardsRealEstate() {
             PostalCode={post.data().PostalCode}
             Street={post.data().Street}
             PlotSize={post.data().PlotArea}
+            FloorSize={post.data().FloorArea}
+            numberOfFloor={post.data().NumberOfFloor}
             RoomNumber={post.data().NumberOfRoom}
             BedroomNumber={post.data().NumberOfBedroom}
-            HouseType={post.data().HouseType}
+            LivingroomNumber={post.data().NumberOfLivingRoom}
           />
         ))}
       </div>
