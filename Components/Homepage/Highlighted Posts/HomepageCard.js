@@ -119,9 +119,9 @@ function HomepageCard(props) {
 
   return (
     <div className="flex flex-col md:w-full w-4/5 min-h-96 mb-3 dark:border-white dark:bg-transparent border-gray-100 border-2 rounded-md transition-all duration-200 ease-out cursor-pointer homepage-card">
-      <div className="relative overflow-hidden h-full">
+      <div className="relative overflow-hidden h-80 min-h-full">
         <img
-          className="rounded-md w-full h-full card-image object-contain"
+          className="rounded-md w-full h-full card-image"
           layout="cover"
           src={props.image}
           alt=""
@@ -151,7 +151,7 @@ function HomepageCard(props) {
         </div>
       </div>
       <div className="p-4">
-        <div className="relative overflow-hidden flex-center-between">
+        <div className="relative overflow-hidden flex-center-between font-semibold">
           <div>
             <p>
               {props.firstItem}, {props.secondItem}
