@@ -4,7 +4,6 @@ import { AnimatedSelect } from "./AnimatedSelect";
 import axios from "axios";
 
 const VehicleForm = () => {
-  // LMkbh9ONzhIkm0A9QWZy/Q==DPJ0zUT4dRWEcz2b
   const [brands, setBrands] = useState([]);
   const [brand, setBrand] = useState("");
   const [year, setYear] = useState("");
@@ -16,8 +15,8 @@ const VehicleForm = () => {
     method: "GET",
     url: "https://car-data.p.rapidapi.com/cars/makes",
     headers: {
-      "X-RapidAPI-Key": "8639f16e72mshbc174c18fb5830cp1bcc06jsn745532145d5e",
-      "X-RapidAPI-Host": "car-data.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.X_RAPIDAPI_KEY,
+      "X-RapidAPI-Host": process.env.X_RAPIDAPI_HOST,
     },
   };
   var brandList = [];
@@ -49,8 +48,8 @@ const VehicleForm = () => {
         make: brand.value,
       },
       headers: {
-        "X-RapidAPI-Key": "8639f16e72mshbc174c18fb5830cp1bcc06jsn745532145d5e",
-        "X-RapidAPI-Host": "car-data.p.rapidapi.com",
+        "X-RapidAPI-Key": process.env.X_RAPIDAPI_KEY,
+        "X-RapidAPI-Host": process.env.X_RAPIDAPI_HOST,
       },
     };
 
@@ -102,49 +101,3 @@ const VehicleForm = () => {
 };
 
 export default VehicleForm;
-//   useEffect(() => {
-//     fetch({
-//       success: function (result) {
-//         console.log(result);
-//       },
-//       error: function ajaxError(jqXHR) {
-//         console.error("Error: ", jqXHR.responseText);
-//       },
-//     });
-//   }, []);
-
-//   const options = {
-//     method: "GET",
-//     url: "https://api.api-ninjas.com/v1/cars?make=audi",
-//     headers: { "X-Api-Key": "LMkbh9ONzhIkm0A9QWZy/Q==DPJ0zUT4dRWEcz2b" },
-//   };
-//   axios
-//     .request(options)
-//     .then(function (response) {
-//       console.log(response.data);
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
-//   useEffect(() => {
-//     const modelOptions = {
-//       method: "GET",
-//       url: "https://car-data.p.rapidapi.com/cars",
-//       params: { limit: "50", page: "0", make: brand.value },
-//       headers: {
-//         "X-RapidAPI-Key": "8639f16e72mshbc174c18fb5830cp1bcc06jsn745532145d5e",
-//         "X-RapidAPI-Host": "car-data.p.rapidapi.com",
-//       },
-//     };
-
-//     axios
-//       .request(modelOptions)
-//       .then(function (response) {
-//         console.log(response.data.map((i) => i.model));
-//       })
-//       .catch(function (error) {
-//         console.error(error);
-//       });
-//     const abc = { limit: "50", page: "0", make: brand.value };
-//     console.log(abc);
-//   }, [brand]);
