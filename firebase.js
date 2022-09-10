@@ -8,13 +8,13 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAjUbpx_w4IuH9gkRklt5mXAvH3JnoRTh4",
-  authDomain: "kateldo-v2.firebaseapp.com",
+  apiKey: process.env.FIREBASE_API,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   projectId: "kateldo-v2",
-  storageBucket: "kateldo-v2.appspot.com",
-  messagingSenderId: "543682852724",
-  appId: "1:543682852724:web:e22f09ea1083871e611e21",
-  measurementId: "G-4GBZYES8JJ",
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGE,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
