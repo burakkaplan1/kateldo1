@@ -8,6 +8,7 @@ function HomepageModal() {
 
   const bannerCards = {
     left: {
+      id: 0,
       imageURL:
         "https://media.istockphoto.com/photos/colonial-style-house-picture-id1284097677?b=1&k=20&m=1284097677&s=170667a&w=0&h=1A7BkHG5OU4WCN7m22OOhvVmU21q4UsYVJPrS1kgcKI=",
       text: t("BannerLeftText"),
@@ -16,6 +17,7 @@ function HomepageModal() {
       buttonURL: "/realestate/list",
     },
     right: {
+      id: 1,
       imageURL:
         "https://media.istockphoto.com/photos/road-trip-with-my-best-friend-picture-id1324380685?b=1&k=20&m=1324380685&s=170667a&w=0&h=T7fFkZmHzvye117esYVj5aRmZ5po_67XbDxIELFkBDg=",
       text: t("BannerRightText"),
@@ -31,16 +33,19 @@ function HomepageModal() {
   return (
     <div className="mx-2 flex space-x-4">
       {Object.values(bannerCards).map((card) => (
-        <div className=" relative flex justify-center items-center w-full mx-auto">
+        <div
+          key={card.id}
+          className="relative flex justify-center items-center w-full mx-auto select-none"
+        >
           <img
             className="w-full min-h-[50vh] object-cover rounded-lg brightness-50 dark:filter dark:grayscale"
             layout=""
             src={card.imageURL}
             alt="homepage pic"
           />
-          <h1 className="absolute top-10 left-[10%] max-w-sm text-3xl sm:text-5xl font-extrabold text-white cursor-default">
+          <h1 className="absolute top-10 left-[10%] max-w-sm text-3xl md:text-5xl font-extrabold text-white cursor-default">
             {card.text}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br text-5xl sm:text-6xl from-purple-500 to-blue-500 ">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br text-4xl md:text-6xl from-purple-500 to-blue-500 ">
               {card.coloredText}
             </span>
           </h1>
