@@ -9,7 +9,18 @@
   .flex-center-center {
     @apply flex items-center justify-center;
   }
+  .flex-center-evenly {
+    @apply flex items-center justify-evenly;
+  }
 
+  /*Transition -> property / duration / timing */
+
+  .all-150-linear {
+    @apply transition-all duration-150 ease-linear;
+  }
+  .all-200-linear {
+    @apply transition-all duration-200 ease-linear;
+  }
   /* ========================== Classes ========================== */
 
   .homepage-card {
@@ -31,6 +42,21 @@
 
   .icon-md {
     @apply w-5 h-5;
+  }
+
+  .most-card-inner {
+    @apply all-150-linear;
+    &:hover {
+      img {
+        @apply scale-110;
+      }
+      .card-title {
+        @apply top-1;
+      }
+      .card-info {
+        @apply z-10;
+      }
+    }
   }
   .navBtn {
     @apply hidden 
@@ -72,4 +98,14 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
