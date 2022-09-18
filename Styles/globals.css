@@ -2,18 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-
   /* Flex -> flex / align / justify */
   .flex-center-between {
-    @apply flex items-center justify-between  
+    @apply flex items-center justify-between;
   }
   .flex-center-center {
-    @apply flex items-center justify-center
+    @apply flex items-center justify-center;
   }
 
+  /* ========================== Classes ========================== */
 
+  .homepage-card {
+    @apply transition-all duration-150 ease-linear;
+    &:hover {
+      .card-image {
+        @apply transition-all duration-150 ease-linear;
+      }
+    }
+  }
+  .homepage-card {
+    @apply transition-all duration-150 ease-linear;
+    &:hover {
+      .card-info {
+        @apply h-full bottom-0 transition-all duration-150 ease-linear bg-white/90 dark:bg-black/75 absolute;
+      }
+    }
+  }
 
-
+  .icon-md {
+    @apply w-5 h-5;
+  }
   .navBtn {
     @apply hidden 
      md:inline-flex;

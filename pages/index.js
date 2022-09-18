@@ -8,7 +8,12 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["Common"])),
+      ...(await serverSideTranslations(locale, [
+        "Common",
+        "Colours",
+        "realestate",
+        "VehicleGeneral",
+      ])),
       // Will be passed to the page component as props
     },
   };
